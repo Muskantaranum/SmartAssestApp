@@ -1,4 +1,27 @@
 {
   "name": "SmartAssestApp",
-  "displayName": "SmartAssestApp"
+  "displayName": "SmartAssestApp",
+  "expo": {
+    "name": "Smart Asset",
+    "slug": "SmartAssestApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#3B82F6"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#3B82F6"
+      },
+      "package": "com.smartasset.app"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.smartasset.app"
+    }
+  }
 }

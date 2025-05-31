@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Square with Rounded Corners -->
+  <rect width="1024" height="1024" rx="224" fill="#3B82F6"/>
+  
+  <!-- Shopping Bag (scaled and centered) -->
+  <g transform="translate(212, 212) scale(3)">
+    <path d="M140 70H60C57.2386 70 55 72.2386 55 75V145C55 147.761 57.2386 150 60 150H140C142.761 150 145 147.761 145 145V75C145 72.2386 142.761 70 140 70Z" fill="white"/>
+    <path d="M85 70V60C85 52.268 91.268 46 99 46C106.732 46 113 52.268 113 60V70" stroke="white" stroke-width="4"/>
+    
+    <!-- Checkmark -->
+    <path d="M75 100L90 115L125 80" stroke="#3B82F6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg> 

@@ -1,131 +1,113 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
+import LoginScreen from './screens/LoginScreen';
+import DashboardScreen from './screens/Dashboard';
+import CustomerDashboard from './screens/CustomerDashboard';
+import ManageProductsScreen from './screens/ManageProducts';
+import ProductLocation from './screens/ProductLocation';
+import ExpiryDateTrackingScreen from './screens/ExpiryDateTrackingScreen';
+import CRBrowseProduct from './screens/CRBrowseProduct'
+import CRShoppingList from './screens/CRShoppingList';
+import CRExpiryDate from './screens/CRExpiryDate';
+import IoTDeviceManager from './screens/IoTDeviceManager';
+import ProductCategories from './screens/ProductCategories';
+import Analytics from './screens/Analytics';
+import BatchManagement from './screens/BatchManagement';
+import ScaleScreen from './screens/ScaleScreen';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export type RootStackParamList = {
+  Login: undefined;
+  Dashboard: undefined;
+  CustomerDashboard: undefined;
+  ManageProducts: undefined;
+  ProductLocation: undefined;
+  ExpiryDateTracking: undefined;
+  CRBrowseProduct: undefined;
+  CRShoppingList: undefined;
+  CRExpiryDate: undefined;
+  ProductCategories: undefined;
+  Analytics: undefined;
+  IoTDeviceManager: undefined;
+  BatchManagement: undefined;
+  Scale: undefined;
+};
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const Stack = createStackNavigator<RootStackParamList>();
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Dashboard" component={DashboardScreen} />
+        <Stack.Screen name="CustomerDashboard" component={CustomerDashboard} />
+        <Stack.Screen name="ManageProducts" component={ManageProductsScreen} />
+        <Stack.Screen name="ProductLocation" component={ProductLocation} />
+        <Stack.Screen name="ExpiryDateTracking" component={ExpiryDateTrackingScreen} />
+        <Stack.Screen name="CRBrowseProduct" component={CRBrowseProduct} />
+        <Stack.Screen name="CRShoppingList" component={CRShoppingList} />
+        <Stack.Screen name="CRExpiryDate" component={CRExpiryDate} />
+        <Stack.Screen name="ProductCategories" component={ProductCategories} />
+        <Stack.Screen 
+          name="Analytics" 
+          component={Analytics}
+          options={{
+            title: 'Data Analytics',
+            headerStyle: {
+              backgroundColor: '#2e64e5',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen 
+          name="IoTDeviceManager" 
+          component={IoTDeviceManager}
+          options={{
+            title: 'IoT Device Manager',
+            headerStyle: {
+              backgroundColor: '#3B82F6',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen 
+          name="BatchManagement" 
+          component={BatchManagement}
+          options={{
+            title: 'Batch Management',
+            headerStyle: {
+              backgroundColor: '#2e64e5',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen 
+          name="Scale" 
+          component={ScaleScreen}
+          options={{
+            title: 'Smart Scale',
+            headerStyle: {
+              backgroundColor: '#2196F3',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the recommendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
-
-  return (
-    <View style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        style={backgroundStyle}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
-        </View>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            paddingHorizontal: safePadding,
-            paddingBottom: safePadding,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;

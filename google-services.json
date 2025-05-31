@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "414619725992",
+    "project_id": "smartassestapp-712dc",
+    "storage_bucket": "smartassestapp-712dc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414619725992:android:1de50313a2c6ed2d10529d",
+        "android_client_info": {
+          "package_name": "com.smartassestapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLYc5N0RJjBXiF0Az7TpSDcZ2Hb0nMbQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
