@@ -14,7 +14,9 @@ import IoTDeviceManager from './screens/IoTDeviceManager';
 import ProductCategories from './screens/ProductCategories';
 import Analytics from './screens/Analytics';
 import BatchManagement from './screens/BatchManagement';
-import ScaleScreen from './screens/ScaleScreen';
+import { ScaleScreen } from './screens/ScaleScreen';
+import LowStockSection from './screens/LowStockSection';
+import { SafeAreaView, StatusBar } from 'react-native';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -31,82 +33,100 @@ export type RootStackParamList = {
   IoTDeviceManager: undefined;
   BatchManagement: undefined;
   Scale: undefined;
+  LowStock: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Dashboard" component={DashboardScreen} />
-        <Stack.Screen name="CustomerDashboard" component={CustomerDashboard} />
-        <Stack.Screen name="ManageProducts" component={ManageProductsScreen} />
-        <Stack.Screen name="ProductLocation" component={ProductLocation} />
-        <Stack.Screen name="ExpiryDateTracking" component={ExpiryDateTrackingScreen} />
-        <Stack.Screen name="CRBrowseProduct" component={CRBrowseProduct} />
-        <Stack.Screen name="CRShoppingList" component={CRShoppingList} />
-        <Stack.Screen name="CRExpiryDate" component={CRExpiryDate} />
-        <Stack.Screen name="ProductCategories" component={ProductCategories} />
-        <Stack.Screen 
-          name="Analytics" 
-          component={Analytics}
-          options={{
-            title: 'Data Analytics',
-            headerStyle: {
-              backgroundColor: '#2e64e5',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen 
-          name="IoTDeviceManager" 
-          component={IoTDeviceManager}
-          options={{
-            title: 'IoT Device Manager',
-            headerStyle: {
-              backgroundColor: '#3B82F6',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen 
-          name="BatchManagement" 
-          component={BatchManagement}
-          options={{
-            title: 'Batch Management',
-            headerStyle: {
-              backgroundColor: '#2e64e5',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen 
-          name="Scale" 
-          component={ScaleScreen}
-          options={{
-            title: 'Smart Scale',
-            headerStyle: {
-              backgroundColor: '#2196F3',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar barStyle="dark-content" />
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Dashboard" component={DashboardScreen} />
+          <Stack.Screen name="CustomerDashboard" component={CustomerDashboard} />
+          <Stack.Screen name="ManageProducts" component={ManageProductsScreen} />
+          <Stack.Screen name="ProductLocation" component={ProductLocation} />
+          <Stack.Screen name="ExpiryDateTracking" component={ExpiryDateTrackingScreen} />
+          <Stack.Screen name="CRBrowseProduct" component={CRBrowseProduct} />
+          <Stack.Screen name="CRShoppingList" component={CRShoppingList} />
+          <Stack.Screen name="CRExpiryDate" component={CRExpiryDate} />
+          <Stack.Screen name="ProductCategories" component={ProductCategories} />
+          <Stack.Screen 
+            name="Analytics" 
+            component={Analytics}
+            options={{
+              title: 'Data Analytics',
+              headerStyle: {
+                backgroundColor: '#2e64e5',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen 
+            name="IoTDeviceManager" 
+            component={IoTDeviceManager}
+            options={{
+              title: 'IoT Device Manager',
+              headerStyle: {
+                backgroundColor: '#3B82F6',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen 
+            name="BatchManagement" 
+            component={BatchManagement}
+            options={{
+              title: 'Batch Management',
+              headerStyle: {
+                backgroundColor: '#2e64e5',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen 
+            name="Scale" 
+            component={ScaleScreen}
+            options={{
+              title: 'Smart Scale',
+              headerStyle: {
+                backgroundColor: '#2196F3',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+          <Stack.Screen 
+            name="LowStock" 
+            component={LowStockSection}
+            options={{
+              title: 'Low Stock Monitoring',
+              headerStyle: {
+                backgroundColor: '#FF3B30',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 };
 

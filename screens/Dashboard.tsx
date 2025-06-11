@@ -27,7 +27,11 @@ const Dashboard = () => {
     { title: '📦 Batch Management', screen: 'BatchManagement' },
     { title: '🗂️ Product Categories', screen: 'ProductCategories' },
     { title: '📅 Expiry Date Tracking', screen: 'ExpiryDateTracking' },
-    { title: '🔧 IoT Device Manager', screen: 'IoTDeviceManager' },
+    { 
+      title: '⚠️ Low Stock Monitoring', 
+      screen: 'LowStock',
+      isHardware: true 
+    },
   ];
 
   const renderHeader = () => (

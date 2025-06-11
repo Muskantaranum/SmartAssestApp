@@ -68,11 +68,6 @@ const CustomerDashboard = () => {
       description: 'Create and manage your shopping list',
       onPress: () => navigation.navigate('CRShoppingList'),
     },
-    {
-      title: '⚠️ Expiry Tracking',
-      description: 'View products expiring soon',
-      onPress: () => navigation.navigate('CRExpiryDate'),
-    },
   ];
 
   const renderHeader = () => (
